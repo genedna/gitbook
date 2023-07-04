@@ -185,26 +185,18 @@ function NavigationGroup({ group, className }) {
 
 export const navigation = [
   {
-    title: 'Guides',
+    title: 'Git Internal',
     links: [
-      { title: 'Introduction', href: '/' },
-      { title: 'Quickstart', href: '/quickstart' },
-      { title: 'SDKs', href: '/sdks' },
-      { title: 'Authentication', href: '/authentication' },
-      { title: 'Pagination', href: '/pagination' },
-      { title: 'Errors', href: '/errors' },
-      { title: 'Webhooks', href: '/webhooks' },
+      { title: 'Git', href: '/' },
     ],
   },
   {
-    title: 'Resources',
-    links: [
-      { title: 'Contacts', href: '/contacts' },
-      { title: 'Conversations', href: '/conversations' },
-      { title: 'Messages', href: '/messages' },
-      { title: 'Groups', href: '/groups' },
-      { title: 'Attachments', href: '/attachments' },
-    ],
+    title: 'Git Commands',
+    links: [],
+  },
+  {
+    title: 'Git Resources',
+    links: [],
   },
 ]
 

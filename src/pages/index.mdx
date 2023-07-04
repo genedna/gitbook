@@ -1,4 +1,4 @@
-import { Guides } from '@/components/Guides'
+import { Objects } from '@/components/objects'
 import { Resources } from '@/components/Resources'
 import { HeroPattern } from '@/components/HeroPattern'
 
@@ -6,19 +6,19 @@ export const description =
   'Learn everything there is to know about the Protocol API and integrate Protocol into your product.'
 
 export const sections = [
-  { title: 'Guides', id: 'guides' },
+  { title: 'Objects', id: 'objects' },
   { title: 'Resources', id: 'resources' },
 ]
 
 <HeroPattern />
 
-# API Documentation
+# Git - From Intern(al) To Expert
 
-Use the Protocol API to access contacts, conversations, group messages, and more and seamlessly integrate your product into the workflows of dozens of devoted Protocol users. {{ className: 'lead' }}
+这是一本正在编写的电子书，目标是通过对 Git 底层对象原理的说明帮助开发者从内到外深入理解 Git ，实现从入门到掌握 Git 精髓， 让其成为工作过程中的 “利器”。 {{ className: 'lead' }}
 
 <div className="not-prose mb-16 mt-6 flex gap-3">
-  <Button href="/quickstart" arrow="right" children="Quickstart" />
-  <Button href="/sdks" variant="outline" children="Explore SDKs" />
+  <Button href="/internals" arrow="right" children="Git 对象" />
+  <Button href="/commands" variant="outline" children="Git 命令" />
 </div>
 
 ## Getting started {{ anchor: false }}
@@ -34,6 +34,6 @@ To get started, create a new application in your [developer settings](#), then r
   />
 </div>
 
-<Guides />
+<Objects />
 
 <Resources />

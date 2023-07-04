@@ -9,6 +9,8 @@ import { useMobileNavigationStore } from '@/components/MobileNavigation'
 import '@/styles/tailwind.css'
 import 'focus-visible'
 
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_MEASUREMENT_ID;
+
 function onRouteChange() {
   useMobileNavigationStore.getState().close()
 }
@@ -21,11 +23,24 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
+      <script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
+      <script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_MEASUREMENT_ID}');
+        `}
+      </script>
+
       <Head>
         {router.pathname === '/' ? (
-          <title>Protocol API Reference</title>
+          <title>Git - From Intern(al) To Expert</title>
         ) : (
-          <title>{`${pageProps.title} - Protocol API Reference`}</title>
+          <title>{`${pageProps.title} - Git - From Intern(al) To Expert`}</title>
         )}
         <meta name="description" content={pageProps.description} />
       </Head>

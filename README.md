@@ -22,6 +22,12 @@ Finally, open [http://localhost:3000](http://localhost:3000) in your browser to 
 
 You can start editing this template by modifying the files in the `/src` folder. The site will auto-update as you edit these files.
 
+### 修改页面左侧导航栏，修改 `/src/components/Navigation.jsx` 文件
+
+```
+export const navigation = [];
+```
+
 ## Global search
 
 This template includes a global search that's powered by the [FlexSearch](https://github.com/nextapps-de/flexsearch) library. It's available by clicking the search input or by using the `⌘K` shortcut.
