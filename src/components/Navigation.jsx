@@ -185,9 +185,9 @@ function NavigationGroup({ group, className }) {
 
 export const navigation = [
   {
-    title: 'Git Internal',
+    title: 'Git',
     links: [
-      { title: 'Git', href: '/' },
+      { title: 'Git Internal', href: '/' },
     ],
   },
   {
