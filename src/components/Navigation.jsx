@@ -187,16 +187,31 @@ export const navigation = [
   {
     title: 'Git',
     links: [
-      { title: 'Git Internal', href: '/' },
+      { title: 'Git 是什么?', href: '/'},
+      { title: 'Git 历史', href: '/history' },
+    ],
+  },
+  {
+    title: 'Git Objects',
+    links: [
+      { title: 'Git Internal', href: '/internals' },
+      { title: 'Blob', href: '/blob' },
+      { title: 'Tree', href: '/tree' },
+      { title: 'Commit', href: '/commit' },
+      { title: 'Tag', href: '/tag'},
     ],
   },
   {
     title: 'Git Commands',
-    links: [],
+    links: [
+      { title: 'Git Commands', href: '/commands' },
+    ],
   },
   {
     title: 'Git Resources',
-    links: [],
+    links: [
+      { title: 'Git Resources', href: '/resources'},  
+    ],
   },
 ]
 
