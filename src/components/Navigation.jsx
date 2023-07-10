@@ -199,6 +199,9 @@ export const navigation = [
       { title: 'Tree', href: '/tree' },
       { title: 'Commit', href: '/commit' },
       { title: 'Tag', href: '/tag'},
+      { title: 'Variable Length', href: '/variable-length' },
+      { title: 'Packfile', href: '/packfile' },
+      { title: 'References', href: '/references'},
     ],
   },
   {
