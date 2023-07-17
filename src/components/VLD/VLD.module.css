@@ -1,0 +1,76 @@
+.VLD {
+    border: 1px solid darkseagreen;
+    padding: 18px;
+    height: 400px;
+    border-radius: 10px;
+    position: relative;
+}
+.button-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.button-container button {
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+
+/*step0*/
+.table-wrapper{
+    /*margin-bottom: -60px;*/
+    position: absolute;
+    top: 25%;
+    left: 3%;
+}
+.table-wrapper table{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.table-wrapper table tbody tr td {
+    border: 1px solid black;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    text-align: center; /* 将单元格中的文本居中 */
+}
+
+/*step1*/
+.tb{
+    transition: transform 2s ease;
+    position: absolute;
+    top: 25%;
+    left: 3%;
+}
+.tb table{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.table-0 {
+    top: 75px;
+    left: 20px;
+    background-color: aqua;
+}
+
+.table-1 {
+    top: 150px;
+    left: 20px;
+    background-color: greenyellow;
+}
+
+.table-2 {
+    top: 225px;
+    left: 20px;
+    background-color: orange;
+}
+.tb table tbody tr td {
+    border: 1px solid black;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    text-align: center; /* 将单元格中的文本居中 */
+}
