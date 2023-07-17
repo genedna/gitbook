@@ -1,0 +1,122 @@
+.VLC {
+    border: 1px solid darkseagreen;
+    padding: 18px;
+    height: 400px;
+    border-radius: 10px;
+    position: relative;
+}
+.button-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.button-container button {
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+.hex{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 30%;
+    left: 42%;
+    justify-content: center;
+    align-items: center;
+}
+.down-arrow{
+
+}
+
+/*step0*/
+.table-wrapper{
+    /*margin-bottom: -60px;*/
+    transition: transform 2s ease;
+    position: absolute;
+    top: 50%;
+    left: 3%;
+}
+.table-wrapper table{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.table-0 {
+    top: 75px;
+    left: 20px;
+    /*background-color: aqua;*/
+}
+
+.table-1 {
+    top: 150px;
+    left: 20px;
+    /*background-color: greenyellow;*/
+}
+
+.table-2 {
+    top: 225px;
+    left: 20px;
+    /*background-color: orange;*/
+}
+
+.table-wrapper table tbody tr td {
+    border: 1px solid black;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    text-align: center; /* 将单元格中的文本居中 */
+    /*opacity: 0; !* 将单元格的透明度设置为 0，使其不可见 *!*/
+    /*transition: opacity 1s ease-in-out; !* 添加过渡效果 *!*/
+}
+.table-wrapper table tbody tr td.show {
+    opacity: 1; /* 将单元格的透明度设置为 1，使其可见 */
+}
+.table-wrapper table tbody td:first-child {
+    background-color: orangered;
+}
+
+/*step1*/
+.table-container{
+    /*margin-bottom: -60px;*/
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    /*transform: translateY(28%) translateX(-5%) scale(0.9);*/
+}
+.table-container table{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.table1-0 {
+    top: 75px;
+    left: 20px;
+    transform: translateY(28%) translateX(-5%) scale(0.9);
+    /*background-color: aqua;*/
+}
+.table1-1 {
+    top: 150px;
+    left: 20px;
+    transform: translateY(-28%) translateX(85%) scale(0.9);
+    /*background-color: greenyellow;*/
+}
+
+.table1-2 {
+    top: 225px;
+    left: 20px;
+    transform: translateY(-84%) translateX(175%) scale(0.9);
+    /*background-color: orange;*/
+}
+
+.table-container table tbody tr td {
+    border: 1px solid black;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    text-align: center; /* 将单元格中的文本居中 */
+}
+.table-container table tbody td:first-child {
+    background-color: orangered;
+}
