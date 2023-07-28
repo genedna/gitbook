@@ -43,6 +43,7 @@
 .table-wrapper table{
     border-collapse: collapse;
     border: 1px solid black;
+    /*display: none;*/
 }
 .table-0 {
     top: 75px;
@@ -53,12 +54,14 @@
 .table-1 {
     top: 150px;
     left: 20px;
+    /*display: none;*/
     /*background-color: greenyellow;*/
 }
 
 .table-2 {
     top: 225px;
     left: 20px;
+    /*display: none;*/
     /*background-color: orange;*/
 }
 
@@ -71,9 +74,9 @@
     /*opacity: 0; !* 将单元格的透明度设置为 0，使其不可见 *!*/
     /*transition: opacity 1s ease-in-out; !* 添加过渡效果 *!*/
 }
-.table-wrapper table tbody tr td.show {
-    opacity: 1; /* 将单元格的透明度设置为 1，使其可见 */
-}
+/*.table-wrapper table tbody tr td.show {*/
+/*    opacity: 1; !* 将单元格的透明度设置为 1，使其可见 *!*/
+/*}*/
 .table-wrapper table tbody td:first-child {
     background-color: orangered;
 }

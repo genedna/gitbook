@@ -5,13 +5,16 @@ export default function VLC() {
   // 定义状态变量
   const [decimal, setDecimal] = useState('');
   const [binary, setBinary] = useState('');
-  const [step, setStep] = useState(-1);
-  const [showLists, setShowLists] = useState(false);
+  const [step, setStep] = useState(0);
+  const [showLists, setShowLists] = useState(true);
 
   // 定义步骤数组
-  const steps = ['①此时先进行',
-    '②再怎么怎么怎么怎么，做什么什么之类的',
-    '③最后巴拉巴拉'];
+  const steps = ['①请输入一个十进制数（范围控制在0~2097151内），并按下“enter“键',
+    '②输入被转化为二进制（继续进程请按”下一步“按钮）',
+    '③组件将二进制数字遍历，每次读7位；每读取一位数字，都将其从低位开始置于表格框内',
+    '④如果下一位还有，最高位补1（否则补0）；如果不足7位则补0补满7位',
+    '⑤将得到的字节序列进行组合',
+    '⑥转化为16进制，得到结果',];
 
   // 处理十进制数输入框的值变化
   const handleInputChange = (event) => {
@@ -30,16 +33,54 @@ export default function VLC() {
       // 将输入的十进制数转换为二进制数
       const binaryValue = (decimal >>> 0).toString(2);
       setBinary(binaryValue);
-      setStep(0);
-      setShowLists(true);
+      setStep(1);
+      // setShowLists(true);
     }
   };
 
   // 处理下一步按钮点击事件
   const handleNextStep = () => {
-    if (step === 0) {
+    if(step===2){
+      setStep(step+1);
+      // // 获取单元格
+      // let cells1 = document.querySelector(`.${styles['table-0']}`).getElementsByTagName('td');
+      // let cells2 = document.querySelector(`.${styles['table-1']}`).getElementsByTagName('td');
+      // let cells3 = document.querySelector(`.${styles['table-2']}`).getElementsByTagName('td');
+      //
+      // // 定时添加类名
+      // let cellIndex1 = 0;
+      // let intervalId1 = setTimeout(() => {
+      //   cells1[cellIndex1].style.opacity='1';
+      //   cellIndex1++;
+      //   if (cellIndex1 >= cells1.length) {
+      //     clearInterval(intervalId1);
+      //     document.querySelector(`.${styles['table-1']}`).style.display = 'table';
+      //     let cellIndex2 = 0;
+      //     let intervalId2 = setTimeout(() => {
+      //       cells2[cellIndex2].style.opacity='1';
+      //       cellIndex2++;
+      //       if (cellIndex2 >= cells2.length) {
+      //         clearInterval(intervalId2);
+      //         document.querySelector(`.${styles['table-2']}`).style.display = 'table';
+      //         let cellIndex3 = 0;
+      //         let intervalId3 = setTimeout(() => {
+      //           cells3[cellIndex3].style.opacity='1';
+      //           cellIndex3++;
+      //           if (cellIndex3 >= cells3.length) {
+      //             clearInterval(intervalId3);
+      //           }
+      //         }, 2000);
+      //       }
+      //     }, 2000);
+      //   }
+      // }, 2000);
+    }
+    else if (step === 3) {
+
       // 平滑移动表格元素
       const table1 = document.querySelector(`.${styles['table-0']}`);
+      console.log("表格1")
+      console.log(table1)
       const table2 = document.querySelector(`.${styles['table-1']}`);
       const table3 = document.querySelector(`.${styles['table-2']}`);
       if (table1) {
@@ -56,8 +97,8 @@ export default function VLC() {
         // table1.style.setProperty('transform', 'translateY(28%) translateX(-5%) scale(0.9)');
         setStep(step + 1);
       }, 2000);
-    } else if (step < steps.length - 1 && showLists && step === 1 || step === 2) {
-      setStep(step + 1);
+    } else if (step < steps.length - 1 && showLists && step === 1 || step === 4) {
+        setStep(step + 1);
     }
   };
 
@@ -68,16 +109,16 @@ export default function VLC() {
     } else if (step === 0) { // 如果当前是第一步，返回到初始状态
       setBinary('');
       setStep(-1);
-      setShowLists(false);
+      // setShowLists(false);
     }
   };
 
   // 处理重置按钮点击事件
   const handleReset = () => {
-    setShowLists(false);
+    // setShowLists(false);
     setDecimal('');
     setBinary('');
-    setStep(-1);
+    setStep(0);
   };
 
   // 将二进制数转换为数组，并从右往左读取每7个数字
@@ -162,7 +203,28 @@ export default function VLC() {
         </div>
       )}
       {/* 显示二进制数的数组 */}
-      {showLists && step === 0 && (
+      {showLists && step === 2 && (
+        <div>
+          {binaryArrays.map((chunk, i) => (
+            <div key={i} className={`${styles['table-wrapper']} ${styles[`table-${i}`]}`}>
+              <table>
+                <tbody>
+                <tr>
+                  {chunk.map((x, j) => (
+                    <td key={j}>{x}</td>
+                  ))}
+                </tr>
+                </tbody>
+              </table>
+              <br />
+            </div>
+          ))}
+
+          <span>这里的依次显示有问题</span>
+        </div>
+      )}
+      {/* 显示二进制数的数组 */}
+      {showLists && step === 3 && (
         <div>
           {binaryArrays.map((chunk, i) => (
             <div key={i} className={`${styles['table-wrapper']} ${styles[`table-${i}`]}`}>
@@ -181,7 +243,7 @@ export default function VLC() {
         </div>
       )}
       {/* 显示步骤 */}
-      {showLists && step === 1 && (
+      {showLists && step === 4 && (
         <div>
           {binaryArrays.map((chunk, i) => (
             <div key={i} className={`${styles['table-container']} ${styles[`table1-${i}`]}`}>
@@ -200,7 +262,7 @@ export default function VLC() {
         </div>
       )}
       {/* 显示步骤 */}
-      {showLists && step === 2 && (
+      {showLists && step === 5 && (
         <div>
           <div>
             {binaryArrays.map((chunk, i) => (
