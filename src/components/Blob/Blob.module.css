@@ -1,0 +1,16 @@
+.Blob {
+    border: 1px solid darkseagreen;
+    padding: 18px;
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+}
+.Blob button{
+    border: 1px solid darkseagreen;
+    width: 70px;
+    border-radius: 10px;
+}
+.Blob table tbody td{
+    width: 10px;
+    height: 10px;
+}
