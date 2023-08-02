@@ -1,0 +1,168 @@
+.VLD {
+    border: 1px solid darkseagreen;
+    padding: 18px;
+    height: 400px;
+    border-radius: 10px;
+    position: relative;
+}
+.button-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.button-container button {
+    border-radius: 4px;
+    padding: 8px 16px;
+}
+.result{
+    display: flex;
+    flex-direction: column;
+    /*position: absolute;*/
+    bottom: 30%;
+    left: 42%;
+    justify-content: center;
+    align-items: center;
+}
+
+/*step0*/
+.table-wrapper{
+    /*margin-bottom: -60px;*/
+    position: absolute;
+    top: 25%;
+    left: 3%;
+}
+.table-wrapper table{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.table-wrapper table tbody tr td {
+    border: 1px solid black;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    text-align: center; /* 将单元格中的文本居中 */
+}
+
+/*step1*/
+.table-containers{
+    transition: transform 2s ease;
+    position: absolute;
+    top: 25%;
+    /*left: 3%;*/
+    transform:scale(0.9);
+}
+.table-containers table{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.table2-0 {
+    top: 75px;
+    /*left: 20px;*/
+    right: 500px;
+    /*background-color: aqua;*/
+}
+
+.table2-1 {
+    top: 150px;
+    right: 500px;
+    /*background-color: greenyellow;*/
+}
+
+.table2-2 {
+    top: 225px;
+    right: 500px;
+    /*background-color: orange;*/
+}
+.table-containers table tbody tr td {
+    border: 1px solid black;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    text-align: center; /* 将单元格中的文本居中 */
+}
+.table-containers table tbody td:first-child {
+    background-color: orangered;
+}
+
+/*step2*/
+.table-container{
+    /*transition: transform 2s ease;*/
+    position: absolute;
+    top: 25%;
+    /*left: 3%;*/
+    transform:scale(0.9);
+}
+.table-container table{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.table3-0 {
+    top: 75px;
+    /*left: 20px;*/
+    right: 500px;
+    transform :translateY(71%) translateX(89%) scale(0.9);
+    /*background-color: aqua;*/
+}
+
+.table3-1 {
+    top: 150px;
+    right: 502px;
+    /*background-color: greenyellow;*/
+}
+
+.table3-2 {
+    top: 225px;
+    right: 500px;
+    /*background-color: orange;*/
+}
+.table-container table tbody tr td {
+    border: 1px solid black;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    text-align: center; /* 将单元格中的文本居中 */
+}
+
+/*step3*/
+.table-con{
+    /*transition: transform 2s ease;*/
+    position: absolute;
+    top: 25%;
+    /*left: 3%;*/
+    transform:scale(0.9);
+}
+.table-con table{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.table4-0 {
+    top: 75px;
+    /*left: 20px;*/
+    right: 500px;
+    transform :translateX(89%) scale(0.9);
+    /*background-color: aqua;*/
+}
+
+.table4-1 {
+    top: 75px;
+    right: 502px;
+    /*background-color: greenyellow;*/
+}
+
+.table4-2 {
+    top: 75px;
+    right: 500px;
+    /*background-color: orange;*/
+}
+.table-con table tbody tr td {
+    border: 1px solid black;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    text-align: center; /* 将单元格中的文本居中 */
+}
