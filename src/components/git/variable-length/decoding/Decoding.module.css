@@ -1,4 +1,4 @@
-.VLD {
+.Decoding {
     border: 1px solid darkseagreen;
     padding: 18px;
     height: 400px;
@@ -89,6 +89,44 @@
     background-color: orangered;
 }
 
+/*step1*/
+.table-containers3{
+    transition: transform 2s ease;
+    position: absolute;
+    top: 25%;
+    /*left: 3%;*/
+    transform:scale(0.9);
+}
+.table-containers3 table{
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+.tb-0 {
+    top: 75px;
+    /*left: 20px;*/
+    right: 500px;
+    /*background-color: aqua;*/
+}
+
+.tb-1 {
+    top: 150px;
+    right: 500px;
+    /*background-color: greenyellow;*/
+}
+
+.tb-2 {
+    top: 225px;
+    right: 500px;
+    /*background-color: orange;*/
+}
+.table-containers3 table tbody tr td {
+    border: 1px solid black;
+    padding: 8px;
+    width: 35px;
+    height: 35px;
+    text-align: center; /* 将单元格中的文本居中 */
+}
+
 /*step2*/
 .table-container{
     /*transition: transform 2s ease;*/
@@ -102,16 +140,17 @@
     border: 1px solid black;
 }
 .table3-0 {
-    top: 75px;
-    /*left: 20px;*/
-    right: 500px;
-    transform :translateY(71%) translateX(89%) scale(0.9);
+    top: 150px;
+    right: 502px;
     /*background-color: aqua;*/
 }
 
 .table3-1 {
-    top: 150px;
-    right: 502px;
+
+    top: 75px;
+    /*left: 20px;*/
+    right: 500px;
+    transform :translateY(71%) translateX(89%) scale(0.9);
     /*background-color: greenyellow;*/
 }
 
@@ -142,15 +181,16 @@
 }
 .table4-0 {
     top: 75px;
-    /*left: 20px;*/
-    right: 500px;
-    transform :translateX(89%) scale(0.9);
+    right: 502px;
     /*background-color: aqua;*/
 }
 
 .table4-1 {
+
     top: 75px;
-    right: 502px;
+    /*left: 20px;*/
+    right: 500px;
+    transform :translateX(89%) scale(0.9);
     /*background-color: greenyellow;*/
 }
 

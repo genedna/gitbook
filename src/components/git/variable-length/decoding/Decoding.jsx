@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styles from './VLD.module.css'
+import styles from './Decoding.module.css'
 
-export default function VLD() {
+export default function Decoding() {
   // 定义状态变量
   const [binary, setBinary] = useState('');
   const [binaryArray, setBinaryArray] = useState([]);
@@ -36,13 +36,10 @@ export default function VLD() {
   // 处理下一步按钮点击事件
   const handleNextStep = () => {
     if(step < steps.length - 1 && showLists){
-      if(step===2){setStep(step + 1);}
-      // 平滑移动表格元素
-      const table1 = document.querySelector(`.${styles['table2-0']}`);
-      const table2 = document.querySelector(`.${styles['table2-1']}`);
-      const table3 = document.querySelector(`.${styles['table2-2']}`);
-
-      if (step===3 && table1) {
+      if(step===2){
+        const table1 = document.querySelector(`.${styles['table2-0']}`);
+        const table2 = document.querySelector(`.${styles['table2-1']}`);
+        const table3 = document.querySelector(`.${styles['table2-2']}`);
         //删除第一列
         const rows = table1.querySelectorAll('tr');
         rows.forEach((row) => {
@@ -50,16 +47,44 @@ export default function VLD() {
           const cells = row.querySelectorAll('td');
           cells[0].style.backgroundColor = 'transparent'; // 设置第一个单元格的背景颜色为透明
         });
-        table1.style.transform = 'translateY(71%) translateX(89%) scale(0.9)';
+        // table1.style.transform = 'translateY(71%) translateX(89%) scale(0.9)';
+        if(table2){
+          //删除第一列
+          const rows = table2.querySelectorAll('tr');
+          rows.forEach((row) => {
+            row.removeChild(row.firstChild);
+            const cells = row.querySelectorAll('td');
+            cells[0].style.backgroundColor = 'transparent'; // 设置第一个单元格的背景颜色为透明
+          });
+          // table2.style.right='502px'
+        }
+        setTimeout(() => {
+          setStep(step + 1);
+        }, 1000);
+      }
+
+      else if (step===3) {
+        const table1 = document.querySelector(`.${styles['tb-0']}`);
+        const table2 = document.querySelector(`.${styles['tb-1']}`);
+        const table3 = document.querySelector(`.${styles['tb-2']}`);
+        // //删除第一列
+        // const rows = table1.querySelectorAll('tr');
+        // rows.forEach((row) => {
+        //   row.removeChild(row.firstChild);
+        //   const cells = row.querySelectorAll('td');
+        //   cells[0].style.backgroundColor = 'transparent'; // 设置第一个单元格的背景颜色为透明
+        // });
+        table1.style.transform = 'translateY(71%) translateX(90%) scale(0.9)';
+
         setTimeout(() => {
           if(table2){
-            //删除第一列
-            const rows = table2.querySelectorAll('tr');
-            rows.forEach((row) => {
-              row.removeChild(row.firstChild);
-              const cells = row.querySelectorAll('td');
-              cells[0].style.backgroundColor = 'transparent'; // 设置第一个单元格的背景颜色为透明
-            });
+            // //删除第一列
+            // const rows = table2.querySelectorAll('tr');
+            // rows.forEach((row) => {
+            //   row.removeChild(row.firstChild);
+            //   const cells = row.querySelectorAll('td');
+            //   cells[0].style.backgroundColor = 'transparent'; // 设置第一个单元格的背景颜色为透明
+            // });
             table2.style.right='502px'
           }
           setStep(step + 1);
@@ -128,15 +153,10 @@ export default function VLD() {
     return newTable;
   };
 
-// 合并数组
-  const mergeArray = (table) => {
-    const mergedArray = table.flat();
-    return mergedArray;
-  };
 
   // 渲染组件
   return (
-    <div className={styles["VLD"]}>
+    <div className={styles["Decoding"]}>
       {/* 二进制数输入框和二进制数展示区 */}
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div>
@@ -218,8 +238,8 @@ export default function VLD() {
       {/*移动结果*/}
       {showLists && step === 3 && (
         <div>
-          {groupBinary().map((group, groupIndex) => (
-            <div key={groupIndex} className={`${styles['table-containers']} ${styles[`table2-${groupIndex}`]}`}>
+          {removeFirstColumn(groupBinary()).map((group, groupIndex) => (
+            <div key={groupIndex} className={`${styles['table-containers3']} ${styles[`tb-${groupIndex}`]}`}>
               <table>
                 <tbody>
                 <tr>
@@ -275,10 +295,18 @@ export default function VLD() {
             </div>
           ))}
           <div style={{marginTop:"100px",}}>
-            <div>↓</div>
-            <span style={{fontWeight:"bold"}}>Size=</span>
-            {mergedArray.map((bit, index) => (
-              <span key={index}>{bit}</span>))}
+            <div style={{marginLeft:"50%"}}>↓</div>
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              <span style={{fontWeight:"bold"}}>Size=</span>
+              {removeFirstColumn(groupBinary()).reverse() .map((group, groupIndex) => (
+                <div key={groupIndex}>
+                  {group.map((bit, index) => (
+                    <span key={index}>
+                      {bit}
+                    </span>
+                  ))}
+                </div>))}
+            </div>
           </div>
         </div>
       )}
