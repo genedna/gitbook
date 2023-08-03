@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styles from './VLC.module.css'
+import styles from './Coding.module.css'
 
-export default function VLC() {
+export default function Coding() {
   // 定义状态变量
   const [decimal, setDecimal] = useState('');
   const [binary, setBinary] = useState('');
@@ -157,7 +157,7 @@ export default function VLC() {
 
   // 渲染组件
   return (
-    <div className={styles["VLC"]}>
+    <div className={styles["Coding"]}>
       {/* 十进制数输入框和二进制数展示区 */}
       <div style={{ display: "flex", justifyContent: "space-between",}}>
         <div>

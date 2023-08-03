@@ -5,7 +5,7 @@ const objects = [
   {
     href: '/blob',
     name: 'Blob 对象',
-    description: '一句话介绍 Blob 对象',
+    description: '一句话介绍 blob 对象',
   },
   {
     href: '/tree',
