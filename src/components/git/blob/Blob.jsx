@@ -64,7 +64,21 @@ function Table(props) {
               <td style={{ border: "1px solid black", padding: "5px" }}>b</td>
               <td style={{ border: "1px solid black", padding: "5px" }}> </td>
               <td style={{ border: "1px solid black", padding: "5px" }}>/0</td>
-              <td style={{ border: "1px solid black", padding: "5px" }}>{(row.content.match(/[\u4e00-\u9fa5]/g) || []).length * 2+(row.content.match(/[a-zA-Z]/g)).length}</td>
+              {/*<td style={{ border: "1px solid black", padding: "5px" }}>{(row.content.match(/[\u4e00-\u9fa5]/g) || []).length * 2+(row.content.match(/[a-zA-Z]/g)).length}</td>*/}
+              <td style={{ border: "1px solid black", padding: "5px" }}>
+                {row.content.split("").reduce((count, char) => {
+                  const chineseRegex = /[\u4e00-\u9fa5]/; // 匹配中文字符的正则表达式
+                  const englishRegex = /[^\u4e00-\u9fa5]/; // 匹配非中文字符的正则表达式
+
+                  if (chineseRegex.test(char)) {
+                    return count + 2; // 中文字符算两个字节
+                  } else if (englishRegex.test(char)) {
+                    return count + 1; // 非中文字符算一个字节
+                  } else {
+                    return count; // 其他字符不算字节
+                  }
+                }, 0)}
+              </td>
               {[...row.content].map((char, index) => (
                 <td key={index} style={{ border: "1px solid black", padding: "5px" }}>{char}</td>
               ))}
@@ -75,7 +89,21 @@ function Table(props) {
           {rows.map((row) => (
             <div>
             <span>Blob-Size: </span>
-            <span>{7 + (row.content.match(/[\u4e00-\u9fa5]/g) || []).length * 2+(row.content.match(/[a-zA-Z]/g)).length}</span>
+            {/*<span>{7 + ((row.content.match(/[\u4e00-\u9fa5]/g) || []).length) * 2+((row.content.match(/[a-zA-Z]/g)).length)}</span>*/}
+              <span>
+                {row.content.split("").reduce((count, char) => {
+                  const chineseRegex = /[\u4e00-\u9fa5]/; // 匹配中文字符的正则表达式
+                  const englishRegex = /[^\u4e00-\u9fa5]/; // 匹配非中文字符的正则表达式
+
+                  if (chineseRegex.test(char)) {
+                    return count + 2; // 中文字符算两个字节
+                  } else if (englishRegex.test(char)) {
+                    return count + 1; // 非中文字符算一个字节
+                  } else {
+                    return count; // 其他字符不算字节
+                  }
+                }, 0)+7}
+              </span>
             </div>
           ))}
         </div>
