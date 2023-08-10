@@ -211,6 +211,17 @@ export const navigation = [
     ],
   },
   {
+    title: 'Git Protocols',
+    links: [
+      { title: 'Protocols', href: '/protocols' },
+      { title: 'HTTP', href: '/http' },
+      { title: 'SSH', href: '/ssh' },
+      { title: 'Git', href: '/git' },
+      { title: 'Local', href: '/local' },
+      { title: 'P2P', href: '/p2p' },
+    ],
+  },
+  {
     title: 'Git Resources',
     links: [
       { title: 'Git Resources', href: '/resources'},  
